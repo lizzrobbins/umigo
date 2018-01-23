@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import Login from './Components/Login.js'
 
 export default class App extends React.Component {
   render() {
@@ -9,8 +10,7 @@ export default class App extends React.Component {
           style={styles.image}
           source={require('./logo-green.png')}
         />
-        <Text>Login Here!</Text>
-        <TextInput style={styles.loginInput} placeholder='login here'/>
+        <Login />
       </View>
     );
   }
