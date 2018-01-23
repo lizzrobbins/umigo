@@ -1,46 +1,50 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { Button, FormLabel, FormInput } from 'react-native-elements'
 
 export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
+        {/* <TextInput
           style={styles.loginInput}
           placeholder='username'/>
         <TextInput
           style={styles.loginInput}
-          placeholder='password'/>
+          placeholder='password'/> */}
+        <FormLabel>Username</FormLabel>
+        <FormInput
+          // onChangeText={someFunction}
+        />
+        <FormLabel>Password</FormLabel>
+        <FormInput
+          // onChangeText={someFunction}
+        />
+        {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
         <Button
+          raised
           // onPress={enterHere}
-          title="Login"
-          style={styles.loginButton} />
+          title='LOGIN'
+          backgroundColor='#70BF53'
+        />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  loginIntro: {
-    textAlign:'center',
-    fontSize: 24,
+  container: {
+    marginLeft: 10,
+    marginRight: 10,
   },
-  loginInput: {
-    width: 250,
-    height: 40,
-    fontSize: 18,
-    borderWidth: 1,
-    color: 'black',
-    borderColor: 'black',
-    borderRadius: 10,
-    marginTop: 10,
-  },
-  loginButton: {
-    width: 150,
-    height: 40,
-    fontSize: 18,
-    color: 'black',
-    borderRadius: 10,
-    marginTop: 10,
-  },
+  // loginInput: {
+  //   width: 250,
+  //   height: 40,
+  //   fontSize: 18,
+  //   borderWidth: 1,
+  //   color: '#483954',
+  //   borderColor: '#483954',
+  //   borderRadius: 10,
+  //   marginBottom: 10,
+  // },
 });
