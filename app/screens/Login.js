@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 
 export default class Login extends React.Component {
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,7 +22,7 @@ export default class Login extends React.Component {
         {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
         <Button
           raised
-          // onPress={enterHere}
+          onPress={this.props.gotoMainPage.bind(this)}
           title='LOGIN'
           backgroundColor='#70BF53'
         />

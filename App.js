@@ -3,8 +3,29 @@ import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-nativ
 import Login from './app/screens/Login.js';
 
 export default class App extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      loginScreen: true,
+      activateMainPage: false
+    }
+  }
+
+  gotoMainPage = () => {
+    this.setState({activateMainPage: true, loginScreen: false})
+
+  }
+
   render() {
-    return <Login />
+    return (
+      <View>
+
+        {this.state.loginScreen ? <Login gotoMainPage = {this.gotoMainPage} /> : null}
+
+        {this.state.activateMainPage ? <MainPage /> : null}
+
+      </View>
+    )
   }
 }
 
