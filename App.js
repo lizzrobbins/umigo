@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-native';
 import Login from './app/screens/Login.js';
+import MainPage from './app/screens/MainPage.js';
 
 export default class App extends React.Component {
   constructor(){
@@ -13,14 +14,13 @@ export default class App extends React.Component {
 
   gotoMainPage = () => {
     this.setState({activateMainPage: true, loginScreen: false})
-
   }
 
   render() {
     return (
       <View>
 
-        {this.state.loginScreen ? <Login gotoMainPage = {this.gotoMainPage} /> : null}
+        {this.state.loginScreen ? <Login gotoMainPage={this.gotoMainPage} /> : null}
 
         {this.state.activateMainPage ? <MainPage /> : null}
 
