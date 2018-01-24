@@ -1,11 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 
 export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        {/* <Image
+          style={styles.image}
+          source={require('.../logo-green.png')}
+        /> */}
         {/* <TextInput
           style={styles.loginInput}
           placeholder='username'/>
@@ -34,8 +38,18 @@ export default class Login extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginLeft: 10,
-    marginRight: 10,
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: 257,
+    height: 250,
+  },
+  container: {
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   // loginInput: {
   //   width: 250,
