@@ -6,16 +6,10 @@ export default class Login extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <Image
+        <Image
           style={styles.image}
-          source={require('.../logo-green.png')}
-        /> */}
-        {/* <TextInput
-          style={styles.loginInput}
-          placeholder='username'/>
-        <TextInput
-          style={styles.loginInput}
-          placeholder='password'/> */}
+          source={require('../../logo-green.png')}
+        />
         <FormLabel>Username</FormLabel>
         <FormInput
           // onChangeText={someFunction}
