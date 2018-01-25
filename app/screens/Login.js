@@ -3,7 +3,10 @@ import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 
 export default class Login extends React.Component {
-
+  constructor(props) {
+      super(props)
+    }
+    
   render() {
     return (
       <View style={styles.container}>
@@ -39,8 +42,7 @@ const styles = StyleSheet.create({
   //   justifyContent: 'center',
   // },
   image: {
-    width: 257,
-    height: 250,
+    width: 300,
 
   },
   container: {
