@@ -1,12 +1,13 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
+// import Navigation from './Navigation.js'
 
 export default class Login extends React.Component {
   constructor(props) {
       super(props)
     }
-    
+
   render() {
     return (
       <View style={styles.container}>
@@ -29,6 +30,7 @@ export default class Login extends React.Component {
           title='LOGIN'
           backgroundColor='#70BF53'
         />
+        {/* <Navigation props={this.state}/> */}
       </View>
     );
   }

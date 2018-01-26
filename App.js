@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-nativ
 import Login from './app/screens/Login.js';
 import MainPage from './app/screens/MainPage.js';
 
+
 export default class App extends React.Component {
   constructor(){
     super()
