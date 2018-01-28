@@ -1,22 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-native';
-import { SafeAreaView, TabNavigator } from 'react-navigation';
-import Login from './Login.js';
+import { StyleSheet, Text, View, Image, TextInput, Navigator, StatusBar } from 'react-native';
+import { StackNavigator, TabNavigator } from 'react-navigation';
 import MainPage from './MainPage.js';
+import Connections from './Connections'
+
+
+// const MainPages = StackNavigator({
+//   MainPage: {
+//     screen: MainPage,
+//     path: '/',
+//   },
+//   Connections: {
+//     screen: Connections,
+//     path: '/location/:name',
+//   },
+// });
+
 
 const Navigation = TabNavigator({
-  Login: {
-    screen: Login,
-    navigationOptions: {
-      tabBarLabel: 'Login'
-    }
-  },
-  MainPage: {
-    screen: MainPage,
-    navigationOptions: {
-      tabBarLabel: 'Main'
-    }
-  }
+  // MainPage: {
+  //   screen: MainPage,
+  //   navigationOptions: {
+  //     tabBarLabel: 'Main'
+  //   }
+  // },
+  // Connections: {
+  //   screen: Connections,
+  //   navigationOptions: {
+  //     tabBarLabel: 'Connections'
+  //   }
+  // }
+
 })
+
 
 export default Navigation

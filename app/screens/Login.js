@@ -13,7 +13,7 @@ export default class Login extends React.Component {
       <View style={styles.container}>
         <Image
           style={styles.image}
-          source={require('../../logo-green.png')}
+          source={require('../../images/logo-green.png')}
         />
         <FormLabel>Username</FormLabel>
         <FormInput
