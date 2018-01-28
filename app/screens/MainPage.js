@@ -21,14 +21,15 @@ export default class MainPage extends React.Component {
           leftComponent={{ icon: 'settings', color: '#fff' }}
           centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 } }}
           rightComponent={{ icon: 'people', color: '#fff',
-          onPress: () => this.gotToConnections,
+          onPress: this.props.gotoConnections.bind(this),
           }}
         />
+
         <View>
           <ScrollView>
             <Image
               style={styles.image}
-              source={require('../../images/puccio1.png')}></Image>
+              source={require('../../images/puccio1.png')} />
             {/* <Text key={this.props.getPerson.id} style={styles.user}>
               {this.props.getPerson.id}
             </Text>
@@ -42,6 +43,7 @@ export default class MainPage extends React.Component {
             <Text styles={styles.interests}>Rock climbing</Text>
           </ScrollView>
         </View>
+
       </View>
     );
   }

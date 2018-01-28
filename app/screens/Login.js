@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
-// import Navigation from './Navigation.js'
+// import Navigation from './Navigation'
 
 export default class Login extends React.Component {
   constructor(props) {

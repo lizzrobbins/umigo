@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-native';
-import Login from './app/screens/Login.js';
-import MainPage from './app/screens/MainPage.js';
-// import Navigation from './app/screens/Navigation.js';
+import Login from './app/screens/Login';
+import MainPage from './app/screens/MainPage';
+import Connections from './app/screens/Connections';
+// import Navigation from './app/screens/Navigation';
 
 export default class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      loginScreen: true,
+      loginScreen: false,
       activateMainPage: false,
-      activateConnections: false,
+      activateConnections: true,
       connection: []
     }
   }
@@ -25,7 +26,7 @@ export default class App extends React.Component {
     this.setState({activateMainPage: true, loginScreen: false, activateConnections: false})
   }
 
-  gotToConnections = () => {
+  gotoConnections = () => {
     this.setState({activateMainPage: false, loginScreen: false, activateConnections: true})
   }
 
@@ -51,7 +52,11 @@ export default class App extends React.Component {
 
         {this.state.loginScreen ? <Login gotoMainPage={this.gotoMainPage} /> : null}
 
-        {this.state.activateMainPage ? <MainPage getPerson={this.getFirstName} gotToConnections={this.gotToConnections} /> : null}
+        {this.state.activateMainPage ? <MainPage getPerson={this.getFirstName} gotoConnections={this.gotoConnections} /> : null}
+
+        {this.state.activateConnections ? <Connections
+        gotoMainPage={this.gotoMainPage} /> : null}
+
         {/* <Navigation /> */}
 
       </View>
