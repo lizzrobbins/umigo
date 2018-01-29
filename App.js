@@ -10,8 +10,8 @@ export default class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      loginScreen: false,
-      activateMainPage: true,
+      loginScreen: true,
+      activateMainPage: false,
       activateConnections: false,
       activateJakeProfile: false,
       connection: []

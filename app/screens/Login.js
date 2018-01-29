@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TextInput } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
 // import Navigation from './Navigation'
 
@@ -10,28 +10,35 @@ export default class Login extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../../images/logo-green.png')}
-        />
-        <FormLabel>Username</FormLabel>
-        <FormInput
-          // onChangeText={someFunction}
-        />
-        <FormLabel>Password</FormLabel>
-        <FormInput
-          // onChangeText={someFunction}
-        />
-        {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
-        <Button
-          raised
-          onPress={this.props.gotoMainPage.bind(this)}
-          title='LOGIN'
-          backgroundColor='#70BF53'
-        />
-        {/* <Navigation props={this.state}/> */}
-      </View>
+      <ImageBackground
+        style={styles.mountainBackground}
+        source={require('../../images/bg-mountain-01.jpg')}
+        >
+        <View style={styles.container}>
+          <Image
+            style={styles.image}
+            source={require('../../images/logo-green.png')}
+          />
+          <FormLabel labelStyle={{color: '#483954'}}>Username</FormLabel>
+          <FormInput
+            // onChangeText={someFunction}
+            inputStyle={{backgroundColor: 'white', opacity: .5, width: 315}}
+          />
+          <FormLabel labelStyle={{color: '#483954'}}>Password</FormLabel>
+          <FormInput
+            // onChangeText={someFunction}
+            inputStyle={{backgroundColor: 'white', opacity: .5, width: 315, marginBottom: 20}}
+          />
+          {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
+          <Button
+            raised
+            onPress={this.props.gotoMainPage.bind(this)}
+            title='LOGIN'
+            backgroundColor='#483954'
+          />
+          {/* <Navigation props={this.state}/> */}
+        </View>
+      </ImageBackground>
     );
   }
 }
@@ -45,12 +52,19 @@ const styles = StyleSheet.create({
   // },
   image: {
     width: 300,
-
+    alignSelf: 'center',
+    marginTop: 90,
+    marginBottom: 50,
   },
   container: {
     paddingLeft: 10,
     paddingRight: 10,
+    // alignItems: 'center',
+    justifyContent: 'center',
   },
+  mountainBackground: {
+    height: 700,
+  }
   // loginInput: {
   //   width: 250,
   //   height: 40,
