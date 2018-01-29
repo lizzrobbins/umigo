@@ -15,7 +15,6 @@ export default class MainPage extends React.Component {
     return (
       <View style={styles.wholePage}>
         <ScrollView>
-        {/* <Navigation props={this.state} /> */}
           <Header
             backgroundColor='white'
             leftComponent={{ icon: 'settings', color: '#483954' }}

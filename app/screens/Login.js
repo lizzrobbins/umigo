@@ -22,12 +22,13 @@ export default class Login extends React.Component {
           <FormLabel labelStyle={{color: '#483954'}}>Username</FormLabel>
           <FormInput
             // onChangeText={someFunction}
-            inputStyle={{backgroundColor: 'white', opacity: .5, width: 315}}
+            inputStyle={{color: 'black', fontWeight: 'bold', backgroundColor: 'white', opacity: .5, width: 315}}
           />
-          <FormLabel labelStyle={{color: '#483954'}}>Password</FormLabel>
+          <FormLabel labelStyle={{color: '#483954', fontWeight: 'bold'}}>Password</FormLabel>
           <FormInput
             // onChangeText={someFunction}
-            inputStyle={{backgroundColor: 'white', opacity: .5, width: 315, marginBottom: 20}}
+            inputStyle={{color: 'black', fontWeight: 'bold', backgroundColor: 'white', opacity: .5, width: 315, marginBottom: 20,}}
+            secureTextEntry={true}
           />
           {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
           <Button
