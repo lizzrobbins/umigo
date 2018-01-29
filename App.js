@@ -11,9 +11,9 @@ export default class App extends React.Component {
     super()
     this.state = {
       loginScreen: false,
-      activateMainPage: false,
+      activateMainPage: true,
       activateConnections: false,
-      activateJakeProfile: true,
+      activateJakeProfile: false,
       connection: []
     }
   }
@@ -61,12 +61,18 @@ export default class App extends React.Component {
           : null}
 
         {this.state.activateMainPage ? <MainPage
-          getPerson={this.getFirstName} gotoConnections={this.gotoConnections} />
+          getPerson={this.getFirstName}
+          gotoConnections={this.gotoConnections} />
           : null}
 
         {this.state.activateConnections ? <Connections
           gotoMainPage={this.gotoMainPage}
           gotoJakeProfile={this.gotoJakeProfile} />
+          : null}
+
+        {this.state.activateJakeProfile ? <JakeProfile
+          gotoMainPage={this.gotoMainPage}
+          gotoConnections={this.gotoConnections}/>
           : null}
 
         {/* <Navigation /> */}
