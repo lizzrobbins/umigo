@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput, Navigator } from 'react-nativ
 import Login from './app/screens/Login';
 import MainPage from './app/screens/MainPage';
 import Connections from './app/screens/Connections';
+import JakeProfile from './app/screens/JakeProfile';
 // import Navigation from './app/screens/Navigation';
 
 export default class App extends React.Component {
@@ -11,7 +12,8 @@ export default class App extends React.Component {
     this.state = {
       loginScreen: false,
       activateMainPage: false,
-      activateConnections: true,
+      activateConnections: false,
+      activateJakeProfile: true,
       connection: []
     }
   }
@@ -23,11 +25,15 @@ export default class App extends React.Component {
   }
 
   gotoMainPage = () => {
-    this.setState({activateMainPage: true, loginScreen: false, activateConnections: false})
+    this.setState({activateMainPage: true, loginScreen: false, activateConnections: false, activateJakeProfile: false})
   }
 
   gotoConnections = () => {
-    this.setState({activateMainPage: false, loginScreen: false, activateConnections: true})
+    this.setState({activateMainPage: false, loginScreen: false, activateConnections: true, activateJakeProfile: false})
+  }
+
+  gotoJakeProfile = () => {
+    this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: true})
   }
 
     getFirstName() {
@@ -50,12 +56,18 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
 
-        {this.state.loginScreen ? <Login gotoMainPage={this.gotoMainPage} /> : null}
+        {this.state.loginScreen ? <Login
+          gotoMainPage={this.gotoMainPage} />
+          : null}
 
-        {this.state.activateMainPage ? <MainPage getPerson={this.getFirstName} gotoConnections={this.gotoConnections} /> : null}
+        {this.state.activateMainPage ? <MainPage
+          getPerson={this.getFirstName} gotoConnections={this.gotoConnections} />
+          : null}
 
         {this.state.activateConnections ? <Connections
-        gotoMainPage={this.gotoMainPage} /> : null}
+          gotoMainPage={this.gotoMainPage}
+          gotoJakeProfile={this.gotoJakeProfile} />
+          : null}
 
         {/* <Navigation /> */}
 
