@@ -14,19 +14,19 @@ export default class MainPage extends React.Component {
     console.log(this.props.getPerson);
     return (
       <View>
+        <ScrollView>
         {/* <Navigation props={this.state} /> */}
-        <Header
-          style={styles.header}
-          backgroundColor='#483954'
-          leftComponent={{ icon: 'settings', color: '#fff' }}
-          centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 } }}
-          rightComponent={{ icon: 'people', color: '#fff',
-          onPress: this.props.gotoConnections.bind(this),
-          }}
-        />
+          <Header
+            style={styles.header}
+            backgroundColor='#483954'
+            leftComponent={{ icon: 'settings', color: '#fff' }}
+            centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 } }}
+            rightComponent={{ icon: 'people', color: '#fff',
+            onPress: this.props.gotoConnections.bind(this),
+            }}
+          />
 
-        <View>
-          <ScrollView>
+          <View>
             <Image
               style={styles.image}
               source={require('../../images/puccio1.png')} />
@@ -49,8 +49,8 @@ export default class MainPage extends React.Component {
               <Text style={styles.interestHeading}>Interests:</Text>
               <Text style={styles.interests}>Rock climbing</Text>
             </View>
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
 
       </View>
     );

@@ -20,24 +20,23 @@ export default class Connections extends React.Component {
   render() {
     return (
       <View>
-
-        <Header
-          style={styles.header}
-          backgroundColor='#483954'
-          leftComponent={{ icon: 'settings', color: '#fff' }}
-          centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 },
-          onPress: this.props.gotoMainPage.bind(this),
-          }}
-          rightComponent={{ icon: 'people', color: '#fff',
-          // onPress: this.props.gotoConnections.bind(this),
-          }}
-        />
-
-        {/* <Text
-          style={styles.pageTitle}>My Connections
-        </Text> */}
-
         <ScrollView>
+          <Header
+            style={styles.header}
+            backgroundColor='#483954'
+            leftComponent={{ icon: 'settings', color: '#fff' }}
+            centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 },
+            onPress: this.props.gotoMainPage.bind(this),
+            }}
+            rightComponent={{ icon: 'people', color: '#fff',
+            // onPress: this.props.gotoConnections.bind(this),
+            }}
+          />
+
+          {/* <Text
+            style={styles.pageTitle}>My Connections
+          </Text> */}
+
           <List containerStyle={{marginTop: 0, marginBottom: 20, borderTopWidth: 0, borderColor: 'pink'}}>
             <TouchableOpacity onPress={this.props.gotoJakeProfile.bind(this)}>
             <View key='1'>
