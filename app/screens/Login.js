@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native';
 import { Button, FormLabel, FormInput } from 'react-native-elements'
-// import Navigation from './Navigation'
+import {Actions} from 'react-native-router-flux';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -33,11 +33,10 @@ export default class Login extends React.Component {
           {/* <FormValidationMessage>{'This field is required'}</FormValidationMessage> */}
           <Button
             raised
-            onPress={this.props.gotoMainPage.bind(this)}
+            onPress={() => Actions.MainPage()}
             title='LOGIN'
             backgroundColor='#483954'
           />
-          {/* <Navigation props={this.state}/> */}
         </View>
       </ImageBackground>
     );
@@ -45,12 +44,6 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: '#fff',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  // },
   image: {
     width: 300,
     alignSelf: 'center',
@@ -66,14 +59,4 @@ const styles = StyleSheet.create({
   mountainBackground: {
     height: 700,
   }
-  // loginInput: {
-  //   width: 250,
-  //   height: 40,
-  //   fontSize: 18,
-  //   borderWidth: 1,
-  //   color: '#483954',
-  //   borderColor: '#483954',
-  //   borderRadius: 10,
-  //   marginBottom: 10,
-  // },
 });

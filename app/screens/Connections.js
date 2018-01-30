@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity } from 'react-native';
-import { Avatar, Button, Header, List, ListItem } from 'react-native-elements'
+import { Avatar, Button, Header, List, ListItem } from 'react-native-elements';
+import {Actions} from 'react-native-router-flux';
 
 export default class Connections extends React.Component {
   constructor(props){
@@ -17,6 +18,10 @@ export default class Connections extends React.Component {
       this.setState({connections: json})
   }
 
+  handleMainPage() {
+    Actions.pop()
+  }
+
   render() {
     return (
       <View>
@@ -25,16 +30,17 @@ export default class Connections extends React.Component {
             backgroundColor='white'
             leftComponent={{ icon: 'settings', color: '#483954' }}
             centerComponent={{ text: 'UmiGo', style: { color: '#483954', fontWeight: 'bold', fontSize: 20 },
-            onPress: this.props.gotoMainPage.bind(this),
+            onPress: this.handleMainPage,
             }}
             rightComponent={{ icon: 'people', color: '#483954',
-            // onPress: this.props.gotoConnections.bind(this),
             }}
             outerContainerStyles={{ borderBottomColor: 'rgba(0,0,0,0.6)', borderBottomWidth: .5, }}
           />
 
           <List containerStyle={{marginTop: 0, marginBottom: 20, borderTopWidth: 0, borderColor: 'pink'}}>
-            <TouchableOpacity onPress={this.props.gotoJakeChat.bind(this)}>
+            <TouchableOpacity
+              onPress={() => Actions.JakeChat()}
+              >
             <View key='1'>
               <ListItem
                 avatar={<Image source={require(`../../images/jake1.jpg`)}

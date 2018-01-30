@@ -2,12 +2,16 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, ImageBackground } from 'react-native';
 import { Button, FormLabel, FormInput, Header } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
-// import Navigation from './Navigation'
+import {Actions} from 'react-native-router-flux';
 import Connections from './Connections'
 
 export default class JakeProfile extends React.Component {
   constructor(props) {
       super(props)
+    }
+
+    handleJakeChat() {
+      Actions.pop()
     }
 
   render() {
@@ -19,7 +23,7 @@ export default class JakeProfile extends React.Component {
             style={styles.header}
             backgroundColor='white'
             leftComponent={{ icon: 'arrow-back', color: '#483954',
-            onPress: this.props.gotoJakeChat.bind(this),
+            onPress: this.handleJakeChat,
             }}
             // centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 },
             // onPress: this.props.gotoMainPage.bind(this),

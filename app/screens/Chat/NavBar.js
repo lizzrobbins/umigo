@@ -1,14 +1,14 @@
 import React from 'react';
 import {Image, StyleSheet, Text} from 'react-native';
 import NavBar, { NavTitle, NavButton, NavGroup } from 'react-native-nav';
+import {Actions} from 'react-native-router-flux';
 
 export default class NavBarCustom extends React.Component {
   render() {
     return (
       <NavBar style={styles}>
         <NavButton
-          onPress={() => this.props.gotoConnections.bind(this)}
-          >
+          onPress={() => Actions.pop()}>
           <Image style={styles.backArrow}
             resizeMode={"contain"}
             source={require('./assets/left-arrow.png')}
@@ -17,7 +17,8 @@ export default class NavBarCustom extends React.Component {
         <NavTitle style={styles.title}>
           <Text style={styles.name}>Jake</Text>
         </NavTitle>
-        <NavButton style={styles.navButton}>
+        <NavButton style={styles.navButton}
+          onPress={() => Actions.JakeProfile()}>
           <Image style={styles.image}
             resizeMode={"contain"}
             source={require('../../../images/jake1.jpg')}

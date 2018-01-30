@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
 import { Button, FormLabel, FormInput, Header, Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
-// import Navigation from './Navigation'
+import {Actions} from 'react-native-router-flux';
 import Connections from './Connections'
 
 const { width } = Dimensions.get('window');
@@ -12,6 +12,10 @@ export default class MainPage extends React.Component {
   constructor(props) {
       super(props)
     }
+
+  handleConnections() {
+    Actions.Connections()
+  }
 
   render() {
     console.log(this.props.getPerson);
@@ -23,7 +27,7 @@ export default class MainPage extends React.Component {
             leftComponent={{ icon: 'settings', color: '#483954' }}
             centerComponent={{ text: 'UmiGo', style: { color: '#483954', fontWeight: 'bold', fontSize: 20 } }}
             rightComponent={{ icon: 'people', color: '#483954',
-            onPress: this.props.gotoConnections.bind(this),
+              onPress: this.handleConnections,
             }}
             outerContainerStyles={{ borderBottomColor: 'white', borderBottomWidth: 0, }}
           />
