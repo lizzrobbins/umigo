@@ -1,9 +1,12 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity, ImageBackground } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
 import { Button, FormLabel, FormInput, Header, Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
 // import Navigation from './Navigation'
 import Connections from './Connections'
+
+const { width } = Dimensions.get('window');
+const height = width * 0.8;
 
 export default class MainPage extends React.Component {
   constructor(props) {
@@ -26,6 +29,11 @@ export default class MainPage extends React.Component {
           />
 
           <View>
+            <ScrollView
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+          >
             <ImageBackground
               style={styles.imageBackground}
               source={require('../../images/puccio1.png')}
@@ -34,6 +42,23 @@ export default class MainPage extends React.Component {
                 style={styles.image}
                 source={require('../../images/puccio1.png')} />
             </ImageBackground>
+            <ImageBackground
+              style={styles.imageBackground}
+              source={require('../../images/puccio2.jpg')}
+              blurRadius={20}>
+              <Image
+                style={styles.image}
+                source={require('../../images/puccio2.jpg')} />
+            </ImageBackground>
+            <ImageBackground
+              style={styles.imageBackground}
+              source={require('../../images/puccio3.jpg')}
+              blurRadius={20}>
+              <Image
+                style={styles.image}
+                source={require('../../images/puccio3.jpg')} />
+            </ImageBackground>
+          </ScrollView>
             <View style={styles.userHeading}>
               <View style={styles.userInfo}>
                 <Text style={styles.name}>Alex, 28</Text>
@@ -75,8 +100,8 @@ const styles = StyleSheet.create({
   imageBackground: {
     alignSelf: 'center',
     justifyContent: 'center',
-    height: 400,
-    width: 400,
+    height: 375,
+    width: 375,
   },
   image: {
     alignSelf: 'center',

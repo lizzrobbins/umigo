@@ -4,16 +4,18 @@ import Login from './app/screens/Login';
 import MainPage from './app/screens/MainPage';
 import Connections from './app/screens/Connections';
 import JakeProfile from './app/screens/JakeProfile';
+import JakeChat from './app/screens/JakeChat';
 // import Navigation from './app/screens/Navigation';
 
 export default class App extends React.Component {
   constructor(){
     super()
     this.state = {
-      loginScreen: true,
-      activateMainPage: false,
+      loginScreen: false,
+      activateMainPage: true,
       activateConnections: false,
       activateJakeProfile: false,
+      activateJakeChat: false,
       connection: []
     }
   }
@@ -25,15 +27,19 @@ export default class App extends React.Component {
   }
 
   gotoMainPage = () => {
-    this.setState({activateMainPage: true, loginScreen: false, activateConnections: false, activateJakeProfile: false})
+    this.setState({activateMainPage: true, loginScreen: false, activateConnections: false, activateJakeProfile: false, activateJakeChat: false})
   }
 
   gotoConnections = () => {
-    this.setState({activateMainPage: false, loginScreen: false, activateConnections: true, activateJakeProfile: false})
+    this.setState({activateMainPage: false, loginScreen: false, activateConnections: true, activateJakeProfile: false, activateJakeChat: false})
   }
 
   gotoJakeProfile = () => {
-    this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: true})
+    this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: true, activateJakeChat: false})
+  }
+
+  gotoJakeChat = () => {
+    this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: false, activateJakeChat: true})
   }
 
     getFirstName() {
@@ -67,12 +73,18 @@ export default class App extends React.Component {
 
         {this.state.activateConnections ? <Connections
           gotoMainPage={this.gotoMainPage}
-          gotoJakeProfile={this.gotoJakeProfile} />
+          gotoJakeChat={this.gotoJakeChat} />
           : null}
 
         {this.state.activateJakeProfile ? <JakeProfile
           gotoMainPage={this.gotoMainPage}
-          gotoConnections={this.gotoConnections}/>
+          gotoJakeChat={this.gotoJakeChat}/>
+          : null}
+
+        {this.state.activateJakeChat ? <JakeChat
+          gotoMainPage={this.gotoMainPage}
+          gotoConnections={this.gotoConnections}
+          gotoJakeProfile={this.gotoJakeProfile}/>
           : null}
 
         {/* <Navigation /> */}

@@ -17,7 +17,7 @@ export default class Login extends React.Component {
         <View style={styles.container}>
           <Image
             style={styles.image}
-            source={require('../../images/logo-green.png')}
+            source={require('../../images/logo-teal.png')}
           />
           <FormLabel labelStyle={{color: '#483954'}}>Username</FormLabel>
           <FormInput

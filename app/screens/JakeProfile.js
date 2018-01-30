@@ -19,7 +19,7 @@ export default class JakeProfile extends React.Component {
             style={styles.header}
             backgroundColor='white'
             leftComponent={{ icon: 'arrow-back', color: '#483954',
-            onPress: this.props.gotoConnections.bind(this),
+            onPress: this.props.gotoJakeChat.bind(this),
             }}
             // centerComponent={{ text: 'UmiGo', style: { color: '#fff', fontWeight: 'bold', fontSize: 20 },
             // onPress: this.props.gotoMainPage.bind(this),
@@ -73,8 +73,8 @@ const styles = StyleSheet.create({
   },
   image: {
     alignSelf: 'center',
-    height: 330,
-    width: 330,
+    height: 340,
+    width: 340,
   },
   userHeading: {
     borderBottomColor: 'rgba(0,0,0,0.2)',

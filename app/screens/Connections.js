@@ -34,7 +34,7 @@ export default class Connections extends React.Component {
           />
 
           <List containerStyle={{marginTop: 0, marginBottom: 20, borderTopWidth: 0, borderColor: 'pink'}}>
-            <TouchableOpacity onPress={this.props.gotoJakeProfile.bind(this)}>
+            <TouchableOpacity onPress={this.props.gotoJakeChat.bind(this)}>
             <View key='1'>
               <ListItem
                 avatar={<Image source={require(`../../images/jake1.jpg`)}
