@@ -68,13 +68,13 @@ const styles = StyleSheet.create({
   imageBackground: {
     alignSelf: 'center',
     justifyContent: 'center',
-    height: 400,
-    width: 400,
+    height: 375,
+    width: 375,
   },
   image: {
     alignSelf: 'center',
-    height: 340,
-    width: 340,
+    height: 330,
+    width: 330,
   },
   userHeading: {
     borderBottomColor: 'rgba(0,0,0,0.2)',

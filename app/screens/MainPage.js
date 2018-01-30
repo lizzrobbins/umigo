@@ -83,7 +83,38 @@ export default class MainPage extends React.Component {
             </View>
             <View style={styles.userInterests}>
               <Text style={styles.interestHeading}>Interests:</Text>
-              <Text style={styles.interests}>Rock climbing</Text>
+                <View style={styles.interests}>
+                <Button
+                  title='Rock climbing'
+                  color='white'
+                  fontSize={18}
+                  fontWeight='bold'
+                  backgroundColor='#483954'
+                  borderRadius={50}
+                  width={10}
+                  style={styles.button1}
+                  />
+                <Button
+                  title='Hiking'
+                  color='white'
+                  fontSize={18}
+                  fontWeight='bold'
+                  backgroundColor='#483954'
+                  borderRadius={50}
+                  width={10}
+                  style={styles.button2}
+                />
+                <Button
+                  title='Running'
+                  color='white'
+                  fontSize={18}
+                  fontWeight='bold'
+                  backgroundColor='darkgray'
+                  borderRadius={50}
+                  width={10}
+                  style={styles.button3}
+                />
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -179,10 +210,24 @@ const styles = StyleSheet.create({
     color: '#393939',
   },
   interests: {
-    fontFamily: 'Helvetica',
-    fontSize: 14,
-    fontWeight: 'bold',
-    paddingLeft: 15,
-    color: '#393939',
-  }
+    flexDirection: 'row',
+  },
+  button1: {
+    width: 150,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: -10,
+  },
+  button2: {
+    width: 90,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: -20,
+  },
+  button3: {
+    width: 100,
+    marginTop: 10,
+    marginBottom: 10,
+    marginLeft: -20,
+  },
 });
