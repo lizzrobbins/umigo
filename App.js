@@ -12,10 +12,10 @@ export default class App extends React.Component {
     super()
     this.state = {
       loginScreen: false,
-      activateMainPage: true,
+      activateMainPage: false,
       activateConnections: false,
       activateJakeProfile: false,
-      activateJakeChat: false,
+      activateJakeChat: true,
       connection: []
     }
   }
