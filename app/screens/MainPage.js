@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity, ImageBackground, Dimensions } from 'react-native';
 import { Button, FormLabel, FormInput, Header, Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
-import {Actions} from 'react-native-router-flux';
+import { Actions, Modal } from 'react-native-router-flux';
 import Connections from './Connections'
 
 const { width } = Dimensions.get('window');
@@ -72,7 +72,7 @@ export default class MainPage extends React.Component {
                 <TouchableOpacity
                   underlayColor='pink'
                   style={styles.likeUserButton}
-                  onPress={()=>alert('hi')}>
+                  onPress={Actions.LikeModal}>
                   <Icon name={'check'}  size={30} color="white" />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.likeUserButton}>

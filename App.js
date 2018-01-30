@@ -5,17 +5,14 @@ import MainPage from './app/screens/MainPage';
 import Connections from './app/screens/Connections';
 import JakeProfile from './app/screens/JakeProfile';
 import JakeChat from './app/screens/JakeChat';
+import LikeModal from './app/screens/LikeModal';
 import {Router, Scene} from 'react-native-router-flux';
 
 export default class App extends React.Component {
   // constructor(){
   //   super()
   //   this.state = {
-  //     loginScreen: false,
-  //     activateMainPage: true,
-  //     activateConnections: false,
-  //     activateJakeProfile: false,
-  //     activateJakeChat: false,
+  //
   //     connection: []
   //   }
   // }
@@ -24,22 +21,6 @@ export default class App extends React.Component {
   //   const response = await fetch(`https://umigo-react-native.herokuapp.com/people/people/1`)
   //   const json = await response.json()
   //     this.setState({connection: json})
-  // }
-  //
-  // gotoMainPage = () => {
-  //   this.setState({activateMainPage: true, loginScreen: false, activateConnections: false, activateJakeProfile: false, activateJakeChat: false})
-  // }
-  //
-  // gotoConnections = () => {
-  //   this.setState({activateMainPage: false, loginScreen: false, activateConnections: true, activateJakeProfile: false, activateJakeChat: false})
-  // }
-  //
-  // gotoJakeProfile = () => {
-  //   this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: true, activateJakeChat: false})
-  // }
-  //
-  // gotoJakeChat = () => {
-  //   this.setState({activateMainPage: false, loginScreen: false, activateConnections: false, activateJakeProfile: false, activateJakeChat: true})
   // }
   //
   //   getFirstName() {
@@ -61,52 +42,20 @@ export default class App extends React.Component {
   render() {
     return <Router>
 
-        <Scene key='root'>
-          <Scene hideNavBar key='Login' component={Login} />
-          <Scene hideNavBar key='MainPage' component={MainPage} />
-          <Scene hideNavBar key='Connections' component={Connections} />
-          <Scene hideNavBar key='JakeChat' component={JakeChat} />
-          <Scene hideNavBar key='JakeProfile' component={JakeProfile} />
-        </Scene>
+          <Scene key='root'>
+            <Scene hideNavBar key='Login' component={Login} />
+            <Scene hideNavBar key='MainPage' component={MainPage} />
+            <Scene hideNavBar key='Connections' component={Connections} />
+            <Scene hideNavBar key='JakeChat' component={JakeChat} />
+            <Scene hideNavBar key='JakeProfile' component={JakeProfile} />
+            <Scene key='LikeModal' component={LikeModal} />
+          </Scene>
+
       </Router>
-
-      {/* <View style={styles.container}>
-
-        {this.state.loginScreen ? <Login
-          gotoMainPage={this.gotoMainPage} />
-          : null}
-
-        {this.state.activateMainPage ? <MainPage
-          getPerson={this.getFirstName}
-          gotoConnections={this.gotoConnections} />
-          : null}
-
-        {this.state.activateConnections ? <Connections
-          gotoMainPage={this.gotoMainPage}
-          gotoJakeChat={this.gotoJakeChat} />
-          : null}
-
-        {this.state.activateJakeProfile ? <JakeProfile
-          gotoMainPage={this.gotoMainPage}
-          gotoJakeChat={this.gotoJakeChat}/>
-          : null}
-
-        {this.state.activateJakeChat ? <JakeChat
-          gotoMainPage={this.gotoMainPage}
-          gotoConnections={this.gotoConnections}
-          gotoJakeProfile={this.gotoJakeProfile}/>
-          : null}
-
-      </View> */}
 
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    // backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
-  },
+
 });
