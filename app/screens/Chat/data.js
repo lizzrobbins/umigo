@@ -21,7 +21,7 @@ export default [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: 'Umm, yes please! We could hit up Clear Creek Canyon.',
+    text: 'Wonderful! We should go in July',
     createdAt: new Date(),
     user: {
       _id: 1,
@@ -34,7 +34,7 @@ export default [
     createdAt: new Date(),
     user: {
       _id: 2,
-      name: 'React Native',
+      name: 'Jake Robbins',
     },
     sent: true,
     received: true,
@@ -45,7 +45,7 @@ export default [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: 'I looooove white water rafting. That\'s a great idea!',
+    text: 'That sounds amazing! Where is it?',
     createdAt: new Date(),
     user: {
       _id: 1,
@@ -54,7 +54,7 @@ export default [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: 'Hey, Lizz! I saw that you like white water rafting! Do you want to go sometime?',
+    text: 'Hey, Lizz! I saw that you like backpacking! Do you want to hike around Snowmass sometime?',
     createdAt: new Date(),
     user: {
       _id: 2,
