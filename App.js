@@ -5,8 +5,7 @@ import MainPage from './app/screens/MainPage';
 import Connections from './app/screens/Connections';
 import JakeProfile from './app/screens/JakeProfile';
 import JakeChat from './app/screens/JakeChat';
-import LikeModal from './app/screens/LikeModal';
-import {Router, Scene} from 'react-native-router-flux';
+import {Router, Scene, Stack} from 'react-native-router-flux';
 
 export default class App extends React.Component {
   // constructor(){
@@ -48,7 +47,6 @@ export default class App extends React.Component {
             <Scene hideNavBar key='Connections' component={Connections} />
             <Scene hideNavBar key='JakeChat' component={JakeChat} />
             <Scene hideNavBar key='JakeProfile' component={JakeProfile} />
-            <Scene key='LikeModal' component={LikeModal} />
           </Scene>
 
       </Router>

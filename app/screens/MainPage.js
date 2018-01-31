@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, Toucha
 import { Button, FormLabel, FormInput, Header, Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Actions, Modal } from 'react-native-router-flux';
+import PopupDialog, { DialogTitle, slideAnimation } from 'react-native-popup-dialog';
 import Connections from './Connections'
 
 const { width } = Dimensions.get('window');
@@ -69,13 +70,27 @@ export default class MainPage extends React.Component {
                 <Text style={styles.location}>Boulder, CO</Text>
               </View>
               <View style={styles.likeButtons}>
+
                 <TouchableOpacity
-                  underlayColor='pink'
                   style={styles.likeUserButton}
-                  onPress={Actions.LikeModal}>
+                  title="Show Dialog"
+                  onPress={() => {this.popupDialog.show()}}>
                   <Icon name={'check'}  size={30} color="white" />
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.likeUserButton}>
+
+                <PopupDialog
+                  dialogTitle={<DialogTitle title="Dialog Title" />}
+                  ref={(popupDialog) => { this.popupDialog = popupDialog; }}
+                  dialogAnimation={slideAnimation}
+                  containerStyle={styles.dialogStyle}
+                >
+                  <View>
+                    <Text>Hello</Text>
+                  </View>
+                </PopupDialog>
+
+                <TouchableOpacity
+                  style={styles.dislikeUserButton}>
                   <Icon name={'close'}  size={30} color="white" />
                 </TouchableOpacity>
               </View>
@@ -176,16 +191,45 @@ const styles = StyleSheet.create({
     borderColor: '#70BF53',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     backgroundColor: '#70BF53',
-    borderRadius: 50,
+    borderRadius: 40,
     marginLeft: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 2,
+  },
+  dislikeUserButton: {
+    borderWidth: 1,
+    borderColor: 'red',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 40,
+    height: 40,
+    backgroundColor: 'red',
+    borderRadius: 40,
+    marginLeft: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  dialogStyle: {
+    flex: 1,
+    elevation: 5,
+    minHeight: 96,
+    borderRadius: 0,
+    shadowColor: 'black',
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    shadowOffset: {
+      width: 1,
+      height: 2,
+    },
   },
   userBio: {
     paddingTop: 15,
