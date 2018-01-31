@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, TouchableOpacity } from 'react-native';
 import { Avatar, Button, Header, List, ListItem } from 'react-native-elements';
 import {Actions} from 'react-native-router-flux';
+import axios from 'axios';
 
 export default class Connections extends React.Component {
   // constructor(props){
@@ -17,12 +18,22 @@ export default class Connections extends React.Component {
   //   const json = await response.json()
   //     this.setState({connections: json})
   // }
+  componentDidMount() {
+    axios.get('http://localhost:3000/people')
+      .then((response) => {
+        let userList = response;
+        console.log(userList.data);
+    }).catch((err) => {
+      console.log(err, 'user not logged in, try again');
+    });
+  }
 
   handleMainPage() {
     Actions.pop()
   }
 
   render() {
+    console.log('CONNECTIONS', this.props);
     return (
       <View>
         <ScrollView>
