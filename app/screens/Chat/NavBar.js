@@ -34,10 +34,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   navBar: {
-    backgroundColor: '#fff',
-  },
-  navGroup: {
-    alignItems: 'center',
+    backgroundColor: 'white',
+    height: 51,
+    alignItems: 'center'
   },
   backArrow: {
     width: 25,
@@ -61,5 +60,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 40,
     width: 40,
+    marginTop: 5
   },
 })

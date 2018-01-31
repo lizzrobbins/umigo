@@ -4,19 +4,19 @@ import { Avatar, Button, Header, List, ListItem } from 'react-native-elements';
 import {Actions} from 'react-native-router-flux';
 
 export default class Connections extends React.Component {
-  constructor(props){
-    super(props)
-
-    this.state = {
-      connections: [],
-    }
-  }
-
-  async componentDidMount(){
-    const response = await fetch('https://umigo-react-native.herokuapp.com/people')
-    const json = await response.json()
-      this.setState({connections: json})
-  }
+  // constructor(props){
+  //   super(props)
+  //
+  //   this.state = {
+  //     connections: [],
+  //   }
+  // }
+  //
+  // async componentDidMount(){
+  //   const response = await fetch('https://umigo-react-native.herokuapp.com/people')
+  //   const json = await response.json()
+  //     this.setState({connections: json})
+  // }
 
   handleMainPage() {
     Actions.pop()

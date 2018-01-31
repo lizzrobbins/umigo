@@ -7,11 +7,6 @@ import messagesData from './data';
 import NavBar from './NavBar';
 import CustomView from './CustomView';
 
-const styles = StyleSheet.create({
-  container: {
-    height: 670,
-  },
-});
 
 const filterBotMessages = (message) => !message.system && message.user && message.user._id && message.user._id === 2;
 const findStep = (step) => (_, index) => index === step - 1;
@@ -82,3 +77,10 @@ export default class App extends Component {
   }
 
 }
+
+const styles = StyleSheet.create({
+  container: {
+    height: 670,
+    backgroundColor: '#333'
+  },
+});

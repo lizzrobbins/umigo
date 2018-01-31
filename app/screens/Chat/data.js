@@ -14,7 +14,7 @@ export default [
     createdAt: new Date(),
     user: {
       _id: 2,
-      name: 'React Native',
+      name: 'Jake Robbins',
     },
     sent: true,
     received: true,
@@ -30,7 +30,7 @@ export default [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: 'Awesome! Wanna go next weekend? The forecast looks perfect.',
+    text: '',
     createdAt: new Date(),
     user: {
       _id: 2,
@@ -38,6 +38,10 @@ export default [
     },
     sent: true,
     received: true,
+    location: {
+      latitude: 39.1188749,
+      longitude: -107.0839451,
+    },
   },
   {
     _id: Math.round(Math.random() * 1000000),
@@ -54,7 +58,7 @@ export default [
     createdAt: new Date(),
     user: {
       _id: 2,
-      name: 'React Native',
+      name: 'Jake Robbins',
     },
     sent: true,
     received: true,
@@ -70,7 +74,7 @@ export default [
   },
   {
     _id: Math.round(Math.random() * 1000000),
-    text: 'You are officially rocking GiftedChat.',
+    text: 'Type to start connecting!',
     createdAt: new Date(),
     system: true,
   },
