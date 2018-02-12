@@ -1,5 +1,10 @@
 # UmiGo
 
+A mobile social networking app that connects outdoor enthusiasts
+
+Technologies used: React Native, Express, Node.js, Knex.js, PostgreSQL
+
+![alt text](./images/puccio1.png "Logo Title Text 1")
 
 ## Instructions
 
