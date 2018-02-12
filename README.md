@@ -4,7 +4,9 @@ A mobile social networking app that connects outdoor enthusiasts
 
 Technologies used: React Native, Express, Node.js, Knex.js, PostgreSQL
 
-![alt text](./images/puccio1.png "Logo Title Text 1")
+![alt text](./images/login-page.jpg "Login Page")
+
+![alt text](./images/chat-component.jpg "Chat Feature")
 
 ## Instructions
 
