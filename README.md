@@ -6,7 +6,11 @@ Technologies used: React Native, Express, Node.js, Knex.js, PostgreSQL
 
 ![alt text](./images/login-page.jpg "Login Page")
 
-![alt text](./images/chat-component.jpg "Chat Feature")
+![alt text](./images/main-page.png "Main Page")
+
+![alt text](./images/connections.jpg "Connections")
+
+![alt text](./images/chat-component.png "Chat Feature")
 
 ## Instructions
 
