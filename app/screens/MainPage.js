@@ -3,7 +3,6 @@ import { Image, StyleSheet, Text, View, TextInput, Navigator, ScrollView, Toucha
 import { Button, FormLabel, FormInput, Header, Icon } from 'react-native-elements'
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import { Actions, Modal } from 'react-native-router-flux';
-import PopupDialog, { DialogTitle, slideAnimation } from 'react-native-popup-dialog';
 import Connections from './Connections'
 
 const { width } = Dimensions.get('window');
@@ -15,11 +14,14 @@ export default class MainPage extends React.Component {
     }
 
   handleConnections() {
-    Actions.Connections()
+    console.log(this.props);
+    Actions.Connections({props: this.props})
   }
 
   render() {
-    console.log(this.props.getPerson);
+
+    const user = this.props.props.user_data
+    console.log(user);
     return (
       <View style={styles.wholePage}>
         <ScrollView>
@@ -66,39 +68,23 @@ export default class MainPage extends React.Component {
           </ScrollView>
             <View style={styles.userHeading}>
               <View style={styles.userInfo}>
-                <Text style={styles.name}>Alex, 28</Text>
-                <Text style={styles.location}>Boulder, CO</Text>
+                <Text style={styles.name}>{user.first_name}, {user.age}</Text>
+                <Text style={styles.location}>{user.location}, CO</Text>
               </View>
               <View style={styles.likeButtons}>
-
                 <TouchableOpacity
+                  underlayColor='pink'
                   style={styles.likeUserButton}
-                  title="Show Dialog"
-                  onPress={() => {this.popupDialog.show()}}>
+                  onPress={Actions.LikeModal}>
                   <Icon name={'check'}  size={30} color="white" />
                 </TouchableOpacity>
-
-                <PopupDialog
-                  dialogTitle={<DialogTitle title="Dialog Title" />}
-                  ref={(popupDialog) => { this.popupDialog = popupDialog; }}
-                  dialogAnimation={slideAnimation}
-                  containerStyle={styles.dialogStyle}
-                >
-                  <View>
-                    <Text>Hello</Text>
-                  </View>
-                </PopupDialog>
-
-                <TouchableOpacity
-                  style={styles.dislikeUserButton}>
+                <TouchableOpacity style={styles.likeUserButton}>
                   <Icon name={'close'}  size={30} color="white" />
                 </TouchableOpacity>
               </View>
             </View>
             <View style={styles.userBio}>
-              <Text style={styles.bio}>Hey all! I am a professional rock climber. While I love all styles of climbing, I have a particular affinity for bouldering. I started climbing when I was 13, and I began competing nationally when I was 17.
-
-              My favorite places to climb are Rocky Mountain National Park and Hueco Tanks! I'm looking to hike and climb with some awesome people - let's spot each other!</Text>
+              <Text style={styles.bio}>{user.bio}</Text>
             </View>
             <View style={styles.userInterests}>
               <Text style={styles.interestHeading}>Interests:</Text>
@@ -142,6 +128,7 @@ export default class MainPage extends React.Component {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   wholePage: {
@@ -191,45 +178,16 @@ const styles = StyleSheet.create({
     borderColor: '#70BF53',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     backgroundColor: '#70BF53',
-    borderRadius: 40,
+    borderRadius: 50,
     marginLeft: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
     elevation: 2,
-  },
-  dislikeUserButton: {
-    borderWidth: 1,
-    borderColor: 'red',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 40,
-    height: 40,
-    backgroundColor: 'red',
-    borderRadius: 40,
-    marginLeft: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    elevation: 2,
-  },
-  dialogStyle: {
-    flex: 1,
-    elevation: 5,
-    minHeight: 96,
-    borderRadius: 0,
-    shadowColor: 'black',
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    shadowOffset: {
-      width: 1,
-      height: 2,
-    },
   },
   userBio: {
     paddingTop: 15,
